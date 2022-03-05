@@ -28,25 +28,24 @@
 \setlength{\multicolsep}{1pt plus 0pt minus 0pt}% 50% of original values
 
 \setlist[itemize]{topsep=-0.2cm, parsep=0.1cm}
-\setlist{leftmargin=1cm,before=\setlength{\rightmargin}{\leftmargin}}
+\setlist{leftmargin=1cm,before=\setlength{\rightmargin}{3.3cm}}
 \patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
 \newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}} 
 \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
 
 % definint publication command
 \newcommand\publication[1]{%
-	\smallskip\par\hangpara{1.5em}{1}\bibentry{#1}\smallskip
+	\smallskip\par\hangpara{1.5em}{1}\small{\bibentry{#1}}\smallskip
 }
 
-
-\newcommand{\social}[3]{\href{#1}{\color{#3}{\Large{#2}}}}
+\newcommand{\social}[3]{\href{#1}{\color{#3}{\large{#2}}}}
 \name{Farhood Etaati} % Your name
 % You can merge both of these into a single line, if you do not have a website.
 
 \address{\social{tel:+989171391169}{\faPhoneSquare}{Green} \\ \social{mailto:farhoodetaati@gmail.com}{\faEnvelope}{Gray} \\ 
-\social{https://scholar.google.com/citations?user=U54ICsoAAAAJ&hl=en}{\includegraphics[height=14pt, width=14pt]{icon-scholar.png}}{SkyBlue} \\
+\social{https://scholar.google.com/citations?user=U54ICsoAAAAJ&hl=en}{\includegraphics[height=11pt, width=11pt]{icon-scholar.png}}{SkyBlue} \\
 \social{https://www.linkedin.com/in/farhood-etaati/}{\faLinkedin}{RoyalBlue}\\
-\social{www.github.com/FeryET}{\faGithubSquare}{Black} \\
+\social{https://www.github.com/FeryET}{\faGithubSquare}{Black} \\
 \social{https://stackoverflow.com/users/8265036/farhood-et}{\faStackOverflow}{RedOrange} \\ 
 \social{https://medium.com/@FeryET}{\faMedium}{Black} \\
 \social{https://www.reddit.com/user/feryet}{\faReddit}{RedOrange}
@@ -58,21 +57,21 @@
 	%----------------------------------------------------------------------------------------
 	%	EDUCATION SECTION
 	%----------------------------------------------------------------------------------------
-	
+	\vspace{-1.5em}
 	\begin{rSection}{Education}
 		
 		{\bf M.Sc in Electrical Engineering, Biomedical Systems}, University of Tehran \hfill {2020--Present}\\
 		GPA: 18.06/20.00 (equivalent to 3.88/4.00)
 		\begin{itemize}
-			\item Was assigned as a TA in the following courses: Deep Learning, and Machine Learning.
+			\item TA experiences: Deep Learning, and Machine Learning.
 		\end{itemize}	
 
-		\vspace{3pt}
+
 		
 		{\bf B.Sc in Electrical Engineering, Control Systems}, University of Tehran \hfill {2013--2018}\\
 		GPA: 16.11/20.00 (equivalent to 3.34/4.00)
 			\begin{itemize}
-			\item Was assigned as a TA in the following courses: Linear Algebra (chief TA), Linear Control Systems, and Microprocessors.
+			\item TA experiences: Linear Algebra (chief TA), Linear Control Systems, and Microprocessors.
 		\end{itemize}	
 			
 		
@@ -83,32 +82,32 @@
 		\textbf{Machine Learning Engineer} \hfill Aug 2021 - Present\\
 		\href{https://aimedic.co/}{AIMedic} \hfill \textit{Tehran, Iran}
 		\begin{itemize}
-			\item Team lead of bio-signal processing and analysis. 
-			\item Developed prototypes for seizure classification and arrhythmia detection using EEG and ECG signals respectively.
-			\item Team lead of MLOps team
-			\item Designed and implemented the CI/CD pipeline using GitLab CI/CD tooling.
+			\item Team lead of bio-signal processing and analysis, and senior developer at MLOps team. 
+			\item Developed prototype web services using Pytorch, FastAPI, Docker for seizure classification and arrhythmia detection using EEG and ECG signals respectively, which are scheduled to be piloted soon in a local hospital.
+			\item Designed and implemented CI/CD pipelines using GitLab CI/CD tooling.
 
 		\end{itemize}
-		\vspace{3pt}
+
 		\textbf{Android Developer} \hfill Jan 2019 - Oct 2019\\
 		\href{https://hamsaa.ir/}{Hamsaa} \hfill \textit{Tehran, Iran}
 		\begin{itemize}
 			\item Gained practical experiences of implementing design patterns and software engineering best practices.
-			\item Developed features such as in app downloader and in app video player.
+			\item Developed features such as in app download manager, in app video player, and user guide tour, using Kotlin and Java.
 		\end{itemize}
-		\vspace{3pt}
-		\textbf{Machine Learning Consultant} \hfill Aug 2018 - Aug 2019\\
+		
+		\textbf{Machine Learning Contractor} \hfill Aug 2018 - Aug 2019\\
 		\href{https://cogc.ir/?lang=2}{Cognitive Sciences and Technologies Council}
 		\hfill \textit{Tehran, Iran}
 		\begin{itemize}
-			\item Developed features such as in app download manager, in app video player, and user guide tour.
+			\item Gathered and cleaned domain specific articles using Python, with libraries such as Scrapy, BeautifulSoup and Requests.
+			\item Developed a text classifier that achieved $85\%$ accuracy on a golden dataset.
+			\item Developed a UI for the classifier using PyQT5.
 		\end{itemize}
-		\vspace{3pt}
+		
 		\textbf{Research Assistant} \hfill July 2017 - Aug 2018\\
 		\href{http://mlcm.ut.ac.ir/}{Machine Learning and Computational Modeling Lab} \hfill \textit{Tehran, Iran}
 		\begin{itemize}
-			\item Started out as an intern working on text classification problems.
-			\item Was the main programmer in a series of research projects on offline signature verification systems.
+			\item Acted as the main programmer in a series of research projects on offline signature verification systems, using Theano and Pytorch.
 		\end{itemize}
 		
 	\end{rSection} 
@@ -121,8 +120,6 @@
 			Languages & Python, C/C++, Java, Kotlin, Verilog, Matlab \\
 			Frameworks & Pytorch, Tensorflow, Scikit-Learn, Pandas, FastAPI, OpenCV \\
 			Tools & Git, Docker, Gitlab-CI/CD, Kubernetes, Linux\\
-			Soft Skills & Problem Solving, Teamwork, Communication, Flexibility, Leadership, Accountability
-			\\
 		\end{tabular}\\
 	\end{rSection}
 	
@@ -137,14 +134,14 @@
 		\begin{itemize}
 			\item A blog was written as a guide in Medium for this library. \href{https://medium.com/analytics-vidhya/text-classification-using-lda-35d5b98d4f05}{Link.}
 		\end{itemize}
-		\vspace{3pt}
+		
 		
 		\item \textbf{Implentation of a Transformer from Scratch} {Python, Pytorch, NLTK} \hfill \href{https://github.com/FeryET/persian-to-english-transformer}{GitHub}
 		\begin{itemize}
 			\item Tranformer model from the famous paper "Attention is All You Need".
 			\item Persian to English translation.
 		\end{itemize}
-		\vspace{3pt}
+		
 		
 		\item \textbf{A Neural Network Library From Scratch} {Python, Numpy} \hfill \href{https://github.com/FeryET/scratch_nn_lib}{GitHub}
 		\begin{itemize}
@@ -154,7 +151,7 @@
 		
 		\item \textbf{Pneumonia Classification Using Pytorch} {Pytorch, Numpy, PIL} \hfill \href{https://github.com/FeryET/pneumonia_analysis}{GitHub}
 		\begin{itemize}
-			\item A blog was written in medium explaining the approach.
+			\item A blog was written in Medium explaining the approach.
 			\href{https://medium.com/analytics-vidhya/a-cnn-to-classify-pneumonia-step-by-step-using-pytorch-13a90905abd7}{Link.}
 		\end{itemize}
 		
@@ -178,7 +175,7 @@
 	\nobibliography{shortened_pub.bib}
 	\bibliographystyle{apacite}	
 	\begin{rSection}{Publications}
-		\begin{enumerate}[label={[\arabic*]}]
+		\begin{enumerate}[label={[\arabic*]}, nosep, itemsep=0pt, leftmargin=0.5cm, before=\setlength{\rightmargin}{0cm}]
 			\item \publication{8785979}
 			\item \publication{10.1093/chemse/bjab039}
 		\end{enumerate}
