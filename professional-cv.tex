@@ -2,16 +2,47 @@
 \usepackage{fontawesome5}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage{graphicx}
-\usepackage[left=0.4 in,top=0.4in,right=0.4 in,bottom=0.4in]{geometry} % Document margins
+\usepackage{multicol}
+\usepackage[shortlabels]{enumitem}
+\usepackage[left=0.4 in,top=0.2in,right=0.4 in,bottom=0.2in]{geometry} % Document margins
 \usepackage{etoolbox}
+
+
+
+\usepackage{bibentry}
+\makeatletter\let\saved@bibitem\@bibitem\makeatother
+\usepackage{hanging}
+\usepackage{apacite}
+
+\usepackage{hyperref}
+\usepackage[usenames,dvipsnames]{xcolor}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=RoyalBlue,
+	filecolor=magenta,      
+	urlcolor=Blue,
+}
+\makeatletter\let\@bibitem\saved@bibitem\makeatother
+
+%\setlength{\columnsep}{-300pt}
+\setlength{\multicolsep}{1pt plus 0pt minus 0pt}% 50% of original values
+
+\setlist[itemize]{topsep=-0.2cm, parsep=0.1cm}
+\setlist{leftmargin=1cm,before=\setlength{\rightmargin}{\leftmargin}}
 \patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
 \newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}} 
 \newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
 
+% definint publication command
+\newcommand\publication[1]{%
+	\smallskip\par\hangpara{1.5em}{1}\bibentry{#1}\smallskip
+}
+
+
 \newcommand{\social}[3]{\href{#1}{\color{#3}{\Large{#2}}}}
 \name{Farhood Etaati} % Your name
 % You can merge both of these into a single line, if you do not have a website.
-\address{Tehran, Iran} 
+
 \address{\social{tel:+989171391169}{\faPhoneSquare}{Green} \\ \social{mailto:farhoodetaati@gmail.com}{\faEnvelope}{Gray} \\ 
 \social{https://scholar.google.com/citations?user=U54ICsoAAAAJ&hl=en}{\includegraphics[height=14pt, width=14pt]{icon-scholar.png}}{SkyBlue} \\
 \social{https://www.linkedin.com/in/farhood-etaati/}{\faLinkedin}{RoyalBlue}\\
@@ -31,13 +62,18 @@
 	\begin{rSection}{Education}
 		
 		{\bf M.Sc in Electrical Engineering, Biomedical Systems}, University of Tehran \hfill {2020--Present}\\
-		GPA: 18.06/20.00 (equivalent to 3.88/4.00)\\
-		Teaching Assistantships: Deep Learning, Machine Learning.
+		GPA: 18.06/20.00 (equivalent to 3.88/4.00)
+		\begin{itemize}
+			\item Was assigned as a TA in the following courses: Deep Learning, and Machine Learning.
+		\end{itemize}	
+
+		\vspace{3pt}
 		
 		{\bf B.Sc in Electrical Engineering, Control Systems}, University of Tehran \hfill {2013--2018}\\
-		GPA: 16.11/20.00 (equivalent to 3.34/4.00)\\
-		Teaching Assistantships: Linear Algebra, Linear Control Systems, Microprocessors.
-		
+		GPA: 16.11/20.00 (equivalent to 3.34/4.00)
+			\begin{itemize}
+			\item Was assigned as a TA in the following courses: Linear Algebra (chief TA), Linear Control Systems, and Microprocessors.
+		\end{itemize}	
 			
 		
 	\end{rSection}
@@ -45,37 +81,33 @@
 	 \begin{rSection}{EXPERIENCE}
 		
 		\textbf{Machine Learning Engineer} \hfill Aug 2021 - Present\\
-		AIMedic \hfill \textit{Tehran, Iran}
+		\href{https://aimedic.co/}{AIMedic} \hfill \textit{Tehran, Iran}
 		\begin{itemize}
-			\itemsep -3pt {} 
-			\item Team lead of bio-signal processing and analysis
-			\item Team lead of MLOps team
-			\item Designed and implemented the CI/CD pipeline for the company.
+			\item Team lead of bio-signal processing and analysis. 
 			\item Developed prototypes for seizure classification and arrhythmia detection using EEG and ECG signals respectively.
+			\item Team lead of MLOps team
+			\item Designed and implemented the CI/CD pipeline using GitLab CI/CD tooling.
+
 		\end{itemize}
-		
+		\vspace{3pt}
 		\textbf{Android Developer} \hfill Jan 2019 - Oct 2019\\
 		National Institute of Cognitive Science \hfill \textit{Tehran, Iran}
 		\begin{itemize}
-			\itemsep -3pt {} 
 			\item Gained practical experiences of implementing design patterns and software engineering best practices.
 			\item Developed features such as in app downloader and in app video player.
 		\end{itemize}
-		
+		\vspace{3pt}
 		\textbf{Machine Learning Consultant} \hfill Aug 2018 - Aug 2019\\
 		Hamsaa \hfill \textit{Tehran, Iran}
 		\begin{itemize}
-			\itemsep -3pt {} 
-			\item Gained practical experiences of implementing design patterns and software engineering best practices.
-			\item Developed features such as in app downloader and in app video player.
+			\item Developed features such as in app download manager, in app video player, and user guide tour.
 		\end{itemize}
-		
+		\vspace{3pt}
 		\textbf{Research Assistant} \hfill July 2017 - Aug 2018\\
 		Machine Learning and Computational Modeling Lab \hfill \textit{Tehran, Iran}
 		\begin{itemize}
-			\itemsep -3pt {} 
 			\item Started out as an intern working on text classification problems.
-			\item Took part as the main programmer in a series of research projects on offline signature verification systems.
+			\item Was the main programmer in a series of research projects on offline signature verification systems.
 		\end{itemize}
 		
 	\end{rSection} 
@@ -87,8 +119,7 @@
 		\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
 			Languages & Python, C/C++, Java, Kotlin, Verilog, Matlab \\
 			Frameworks & Pytorch, Tensorflow, Scikit-Learn, Pandas, FastAPI, OpenCV \\
-			Tools & Git, Docker, Gitlab-CI/CD, Kubernetes\\
-			\\
+			Tools & Git, Docker, Gitlab-CI/CD, Kubernetes, Linux\\
 			Soft Skills & Problem Solving, Teamwork, Communication, Flexibility, Leadership, Accountability
 			\\
 		\end{tabular}\\
@@ -100,42 +131,34 @@
 	% Projects
 	%----------------------------------------------------------------------------------------
 	\begin{rSection}{PROJECTS}
-		\vspace{-1.25em}
-		\item \textbf{Project 1} {Language 1, Framework 1, Database, Language 2, Framework 2, DevOps Tooling} \hfill \href{www.github.com/GITHUBURL}{GitHub}
+		\vspace{-0.5em}
+		\item \textbf{Text Classification Library Based on LDA} {Python, Gensim, Pypi} \hfill \href{https://github.com/FeryET/lda_classification}{GitHub}
 		\begin{itemize}
-			\itemsep -3pt {} 
-			\item Created a XYZ feature to accomplish ABC.
-			\item Retrieved data from XYZ to for ABC.
-			\item Implemented XYZ library for ABC.
-			\item Utilized XYZ that increased A by B\%.
+			\item A blog was written as a guide in Medium for this library. \href{https://medium.com/analytics-vidhya/text-classification-using-lda-35d5b98d4f05}{Link.}
 		\end{itemize}
-		\item \textbf{Project 2} {Language 1, Framework 1, Database, Language 2, Framework 2, DevOps Tooling} \hfill \href{www.github.com/GITHUBURL}{GitHub}
+		\vspace{3pt}
+		
+		\item \textbf{Implentation of a Transformer from Scratch} {Python, Pytorch, NLTK} \hfill \href{https://github.com/FeryET/persian-to-english-transformer}{GitHub}
 		\begin{itemize}
-			\itemsep -3pt {} 
-			\item Created a XYZ feature to accomplish ABC.
-			\item Retrieved data from XYZ to for ABC.
-			\item Implemented XYZ library for ABC.
-			\item Utilized XYZ that increased A by B\%.
+			\item Tranformer model from the famous paper "Attention is All You Need".
+			\item Persian to English translation.
 		\end{itemize}
-		\item \textbf{Project 3} {Language 1, Framework 1, Database, Language 2, Framework 2, DevOps Tooling} \hfill \href{www.github.com/GITHUBURL}{GitHub}
+		\vspace{3pt}
+		
+		\item \textbf{A Neural Network Library From Scratch} {Python, Numpy} \hfill \href{https://github.com/FeryET/scratch_nn_lib}{GitHub}
 		\begin{itemize}
-			\itemsep -3pt {} 
-			\item Created a XYZ feature to accomplish ABC.
-			\item Retrieved data from XYZ to for ABC.
-			\item Implemented XYZ library for ABC.
-			\item Utilized XYZ that increased A by B\%.
+			\item Only supports fully connected networks.
+			\item Implemented this as a way to master how NN works under the hood.
 		\end{itemize}
+		
+		\item \textbf{Pneumonia Classification Using Pytorch} {Pytorch, Numpy, PIL} \hfill \href{https://github.com/FeryET/pneumonia_analysis}{GitHub}
+		\begin{itemize}
+			\item A blog was written in medium explaining the approach.
+			\href{https://medium.com/analytics-vidhya/a-cnn-to-classify-pneumonia-step-by-step-using-pytorch-13a90905abd7}{Link.}
+		\end{itemize}
+		
+		
 	\end{rSection} 
-	
-	%----------------------------------------------------------------------------------------
-	\begin{rSection}{Extra-Curricular Activities} 
-		\begin{itemize}
-			\item 	Sample bullet point.
-			\item	Sample bullet point.
-		\end{itemize}
-		
-		
-	\end{rSection}
 	
 	%------------------------
 	% Use this more detailed section if you have Relevant work experience
@@ -143,18 +166,26 @@
 	% that is okay
 	% ----------------------------
 	
-	\begin{rSection}{Work History}
-		\vspace{-1.25em}
-		\item \textbf{Job Title} {Company} \hfill Month Year - Month Year
-		\item \textbf{Job Title} {Company} \hfill Month Year - Month Year
-		\item \textbf{Job Title} {Company} \hfill Month Year - Month Year
-	\end{rSection} 
+%	\begin{rSection}{Work History}
+%		\vspace{-1.25em}
+%		\item \textbf{Job Title} {Company} \hfill Month Year - Month Year
+%		\item \textbf{Job Title} {Company} \hfill Month Year - Month Year
+%		\item \textbf{Job Title} {Company} \hfill Month Year - Month Year
+%	\end{rSection} 
 	
 	%----------------------------------------------------------------------------------------
+	\nobibliography{shortened_pub.bib}
+	\bibliographystyle{apacite}	
 	\begin{rSection}{Publications}
-		\nocite{*} % <==========================================================
-		\bibliographystyle{unsrt}
-		\bibliography{PUBLICATIONS.bib}
+		\begin{enumerate}[label={[\arabic*]}]
+			\item \publication{8785979}
+			\item \publication{10.1093/chemse/bjab039}
+		\end{enumerate}
+		
+%		\nocite{*} % <==========================================================
+%%		\bibliographystyle{unsrt}
+%		\bibliographystyle{plain-short}
+%		\bibliography{PUBLICATIONS.bib}
 	\end{rSection}
 
 	
