@@ -1,192 +1,60 @@
-\documentclass{resume} % Use the custom resume.cls style
-\usepackage{fontawesome5}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage{graphicx}
-\usepackage{multicol}
-\usepackage[shortlabels]{enumitem}
-\usepackage[left=0.4 in,top=0.2in,right=0.4 in,bottom=0.2in]{geometry} % Document margins
-\usepackage{etoolbox}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Rohit Gohri's LaTeX Resume
+% https://github.com/rohit-gohri/resume
+%
+% Version: v2.2.0 (2022/10/22)
+% By Rohit Gohri (https://rohit.page)
+%
+% Copyright (C) 2022 by Rohit Gohri
+%
+% Template: https://github.com/rohit-gohri/resume-template
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+\documentclass[UKenglish]{resume} % Use the custom resume.cls style
+\usepackage{subfiles}
+\usepackage{tabularray}
+\usepackage{xcolor}
 
 
+\newcommand{\bluehref}[3][blue]{\href{#2}{\color{#1}{#3}}}%
+%----------------------------------------------------------------------------------------
+%	VARIABLES
+%----------------------------------------------------------------------------------------
 
-\usepackage{bibentry}
-\makeatletter\let\saved@bibitem\@bibitem\makeatother
-\usepackage{hanging}
-\usepackage{apacite}
+\name{ Farhood Etaati }
+\setCity{ Tehran, Iran }
+\setEmail{ farhoodetaati@gmail.com }
+\setPhoneNum{ +98 917 139 1169}
+\setPhoneNumberContinous {+989171391169}
 
-\usepackage{hyperref}
-\usepackage[usenames,dvipsnames]{xcolor}
-\hypersetup{
-	colorlinks=true,
-	linkcolor=RoyalBlue,
-	filecolor=magenta,      
-	urlcolor=Blue,
-}
-\makeatletter\let\@bibitem\saved@bibitem\makeatother
+\setLinkedIn{}
+\setLinkedInLink{ https://linkedin.com/in/farhood-etaati }
 
-%\setlength{\columnsep}{-300pt}
-\setlength{\multicolsep}{1pt plus 0pt minus 0pt}% 50% of original values
+\setGithub{}
+\setGithubLink{ https://github.com/feryet }
 
-\setlist[itemize]{topsep=-0.2cm, parsep=0.1cm}
-\setlist{leftmargin=1cm,before=\setlength{\rightmargin}{3.3cm}}
-\patchcmd{\thebibliography}{\section*{\refname}}{}{}{}
-\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}} 
-\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+\setStackoverflow {}
+\setStackoverflowLink {https://stackoverflow.com/users/8265036/farhood-et}
 
-% definint publication command
-\newcommand\publication[1]{%
-	\smallskip\par\hangpara{1.5em}{1}\small{\bibentry{#1}}\smallskip
-}
+\setTwitter {}
+\setTwitterLink {https://twitter.com/farhoodetaati}
 
-\newcommand{\social}[3]{ \href{#1}{\color{#3}{\large{#2}}} }
-\name{Farhood Etaati} % Your name
-% You can merge both of these into a single line, if you do not have a website.
+\setPdfKeywords { resume, cv, machine-learning, devops, mlops, software-engineering, backend, python, linux }
+\setPdfSubject { MLOps Engineer  }
 
-\address{\social{tel:+989171391169}{\faPhoneSquare}{Green} \\ \social{mailto:farhoodetaati@gmail.com}{\faEnvelope}{Gray} \\ 
-\social{https://join.skype.com/invite/oTwitIXKQt7U}{\faSkype}{RoyalBlue}\\
-\social{https://scholar.google.com/citations?user=U54ICsoAAAAJ&hl=en}{\includegraphics[height=10pt, width=10pt]{icon-scholar.png}}{SkyBlue} \\
-\social{https://www.linkedin.com/in/farhood-etaati/}{\faLinkedin}{RoyalBlue}\\
-\social{https://www.github.com/FeryET}{\faGithubSquare}{Black} \\
-\social{https://stackoverflow.com/users/8265036/farhood-et}{\faStackOverflow}{RedOrange} \\ 
-\social{https://medium.com/@FeryET}{\faMedium}{Black} \\
-\social{https://www.reddit.com/user/feryet}{\faReddit}{RedOrange}
-}  %
+% Override any variables/commands through a private file
+\InputIfFileExists{\jobname.tmp}{}{}
+
+%----------------------------------------------------------------------------------------
 
 \begin{document}
-
-	%----------------------------------------------------------------------------------------
-	%----------------------------------------------------------------------------------------
-	%	EDUCATION SECTION
-	%----------------------------------------------------------------------------------------
-	\vspace{-1.5em}
-	\begin{rSection}{Education}
-		
-		{\bf M.Sc. in Electrical Engineering, Biomedical Systems}, University of Tehran \hfill {2020--Present}\\
-		GPA: 18.06/20.00 (equivalent to 3.88/4.00)
-		\begin{itemize}
-			\item TA experiences: Deep Learning, and Machine Learning.
-		\end{itemize}	
-
-
-		
-		{\bf B.Sc. in Electrical Engineering, Control Systems}, University of Tehran \hfill {2013--2018}\\
-		GPA: 16.11/20.00 (equivalent to 3.34/4.00)
-			\begin{itemize}
-			\item TA experiences: Linear Algebra (chief TA), Linear Control Systems, and Microprocessors.
-		\end{itemize}	
-			
-		
-	\end{rSection}
 	
-	 \begin{rSection}{EXPERIENCE}
-		
-		\textbf{Machine Learning Engineer} \hfill Aug 2021 - Present\\
-		\href{https://aimedic.co/}{AIMedic} \hfill \textit{Tehran, Iran}
-		\begin{itemize}
-			\item Team lead of bio-signal processing and analysis, and senior developer at MLOps team. 
-			\item Developed prototype web services using Pytorch, FastAPI, Docker for seizure classification and arrhythmia detection using EEG and ECG signals respectively, which are scheduled to be piloted soon in a local hospital.
-			\item Designed and implemented CI/CD pipelines using GitLab CI/CD tooling.
-
-		\end{itemize}
-
-		\textbf{Android Developer} \hfill Jan 2019 - Oct 2019\\
-		\href{https://hamsaa.ir/}{Hamsaa} \hfill \textit{Tehran, Iran}
-		\begin{itemize}
-			\item Gained practical experiences of implementing design patterns and software engineering best practices.
-			\item Developed features such as in app download manager, in app video player, and user guide tour, using Kotlin and Java.
-		\end{itemize}
-		
-		\textbf{Machine Learning Contractor} \hfill Aug 2018 - Aug 2019\\
-		\href{https://cogc.ir/?lang=2}{Cognitive Sciences and Technologies Council}
-		\hfill \textit{Tehran, Iran}
-		\begin{itemize}
-			\item Gathered and cleaned domain specific articles using Python, with libraries such as Scrapy, BeautifulSoup and Requests.
-			\item Developed a text classifier that achieved $85\%$ accuracy on a golden dataset.
-			\item Developed a UI for the classifier using PyQT5.
-		\end{itemize}
-		
-		\textbf{Research Assistant} \hfill July 2017 - Aug 2018\\
-		\href{http://mlcm.ut.ac.ir/}{Machine Learning and Computational Modeling Lab} \hfill \textit{Tehran, Iran}
-		\begin{itemize}
-			\item Acted as the main programmer in a series of research projects on offline signature verification systems, using Theano and Pytorch.
-		\end{itemize}
-		
-	\end{rSection} 
-	
-	%----------------------------------------------------------------------------------------
-	% TECHINICAL STRENGTHS	
-	%----------------------------------------------------------------------------------------
-	\begin{rSection}{SKILLS}
-		\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
-			Languages & Python, C/C++, Java, Kotlin, Verilog, Matlab \\
-			Frameworks & Pytorch, Tensorflow, Scikit-Learn, Pandas, FastAPI, OpenCV \\
-			Tools & Git, Docker, Gitlab-CI/CD, Kubernetes, Linux\\
-		\end{tabular}\\
-	\end{rSection}
-	
-	
-	
-	%----------------------------------------------------------------------------------------
-	% Projects
-	%----------------------------------------------------------------------------------------
-	\begin{rSection}{PROJECTS}
-		\vspace{-0.5em}
-		\item \textbf{Text Classification Library Based on LDA} {Python, Gensim, Pypi} \hfill \href{https://github.com/FeryET/lda_classification}{GitHub}
-		\begin{itemize}
-			\item A blog was written as a guide in Medium for this library. \href{https://medium.com/analytics-vidhya/text-classification-using-lda-35d5b98d4f05}{Link.}
-		\end{itemize}
-		
-		
-		\item \textbf{Implentation of a Transformer from Scratch} {Python, Pytorch, NLTK} \hfill \href{https://github.com/FeryET/persian-to-english-transformer}{GitHub}
-		\begin{itemize}
-			\item Tranformer model from the famous paper "Attention is All You Need".
-			\item Persian to English translation.
-		\end{itemize}
-		
-		
-		\item \textbf{A Neural Network Library From Scratch} {Python, Numpy} \hfill \href{https://github.com/FeryET/scratch_nn_lib}{GitHub}
-		\begin{itemize}
-			\item Only supports fully connected networks.
-			\item Implemented this as a way to master how NN works under the hood.
-		\end{itemize}
-		
-		\item \textbf{Pneumonia Classification Using Pytorch} {Pytorch, Numpy, PIL} \hfill \href{https://github.com/FeryET/pneumonia_analysis}{GitHub}
-		\begin{itemize}
-			\item A blog was written in Medium explaining the approach.
-			\href{https://medium.com/analytics-vidhya/a-cnn-to-classify-pneumonia-step-by-step-using-pytorch-13a90905abd7}{Link.}
-		\end{itemize}
-		
-		
-	\end{rSection} 
-	
-	%------------------------
-	% Use this more detailed section if you have Relevant work experience
-	% keep your resume to 1 page, if you need to remove a project to display relevant experience
-	% that is okay
-	% ----------------------------
-	
-%	\begin{rSection}{Work History}
-%		\vspace{-1.25em}
-%		\item \textbf{Job Title} {Company} \hfill Month Year - Month Year
-%		\item \textbf{Job Title} {Company} \hfill Month Year - Month Year
-%		\item \textbf{Job Title} {Company} \hfill Month Year - Month Year
-%	\end{rSection} 
-	
-	%----------------------------------------------------------------------------------------
-	\nobibliography{shortened_pub.bib}
-	\bibliographystyle{apacite}	
-	\begin{rSection}{Publications}
-		\begin{enumerate}[label={[\arabic*]}, nosep, itemsep=0pt, leftmargin=0.5cm, before=\setlength{\rightmargin}{0cm}]
-			\item \publication{8785979}
-			\item \publication{10.1093/chemse/bjab039}
-		\end{enumerate}
-		
-%		\nocite{*} % <==========================================================
-%%		\bibliographystyle{unsrt}
-%		\bibliographystyle{plain-short}
-%		\bibliography{PUBLICATIONS.bib}
-	\end{rSection}
-
-	
-	
+	\subfile{sections/education.tex}
+	\subfile{sections/skills.tex}
+	\subfile{sections/work.tex}
+	\subfile{sections/project.tex}
 \end{document}

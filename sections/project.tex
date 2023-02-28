@@ -1,0 +1,37 @@
+\documentclass[../professional-cv.tex]{subfiles}
+\begin{document}
+	\begin{rSection}{Projects}
+		%--------------------------------------------------------------------------------
+		%    Projects
+		%-----------------------------------------------------------------------------------------------
+		
+		\begin{rSubsection}
+			{\href{https://github.com/FeryET}{Open Source Projects}}
+			{ \fmtdate{5}{2018} - Present }
+			{}{}
+			\begin{tblr}{colspec={X[1]X[3]}, vspan=default, colsep=1em, rowsep=0.2em, cells={t,j}, width=\linewidth}
+				\href{https://github.com/FeryET/lda_classification}{\textbf{LDA Classification Library}} & {Developed as a hobby project with the accompanying \bluehref{https://medium.com/p/35d5b98d4f05}{blog post}} \\
+				\href{https://github.com/FeryET/scratch_nn_lib}{\textbf{Neural Network Library}} & {Developed a neural network library from scratch.} \\
+				\href{https://github.com/FeryET/persian-to-english-transformer}{\textbf{Persian to English Deep Translation}} & {Implemented and trained the famous Attention is All You Need transformer model for Persian to English translation task}.\\
+				\href{https://github.com/FeryET/comic-cover-generator}{\textbf{Deep Comic Cover Generator}} & {Implemented and trained StyleGanV2 on the task of generating comic covers collected from internet}.\\
+			\end{tblr}
+			
+			
+		\end{rSubsection}
+		
+		\begin{rSubsection}
+			{Domain Specific Papers Classifier, \em{\href{https://cogc.ir/}{COGC}}}
+			{ \fmtdate{5}{2017} - \fmtdate{10}{2018} }
+			{}{}
+			
+			\item Collected papers from google scholar, axiv and semanticscholar using the given keywords, then curated the collection by expert insights. Stack: Python, Selenium.
+			\item Extracted abstracts and keywords from the curated collection using PDF2Text library on python and beautifulsoap on the paper page HTMLs.
+			\item Vectorized and classified papers using a hybrid of Doc2Vec, Word2Vec + TFIDF weighting and SVM classifier. Stack: Gensim, Spacy, Scikit-Learn.
+			\item Developed a QT gui using PyQT5.
+			
+		\end{rSubsection}
+		
+		
+		%----------------------------------------------------------------------------------------
+	\end{rSection}
+\end{document}
