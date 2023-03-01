@@ -31,7 +31,7 @@
 
 \ProvidesClass{resume}[2020/05/03 v1.0.0 Resume Class]
 
-\LoadClass[11pt,A4]{article} % Font size and paper type
+\LoadClass[9pt,A4]{article} % Font size and paper type
 
 \usepackage[parfill]{parskip} % Remove paragraph indentation
 \usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
@@ -44,7 +44,7 @@
 \usepackage{trimspaces} % Required for triming variable values (https://tex.stackexchange.com/a/484290)
 \usepackage{fontawesome} % Required for icons. List of available icons at http://ctan.imsc.res.in/fonts/fontawesome/doc/fontawesome.pdf
 \usepackage{datetime} % Required for custom date formatting
-\usepackage[left=0.8in,top=0.8in,right=0.8in,bottom=0.8in]{geometry} % Required for setting Document margins
+\usepackage[left=0.5in,top=0.5in,right=0.5in,bottom=0.5in]{geometry} % Required for setting Document margins
 \usepackage{scrextend}
 \pagestyle{empty} % Suppress page numbers
 
@@ -218,14 +218,12 @@
 \let\ori@document=\document
 \renewcommand{\document}{
 	\ori@document  % Begin document
-	
 	\hypersetup{
 		pdftitle={ \@name's Resume },
 		pdfauthor={ \@name <\@getEmail> },
 		pdfsubject={ \@getPdfSubject },
 		pdfkeywords={ \@getPdfKeywords }
 	}
-	
 	\printname % Print the name specified with \name
 	\printLinks
 }
@@ -262,8 +260,11 @@
 			{\bf #1} \hfill {\normalfont #4} % Bold company name and location
 			\\ \normalfont {\em #3} \hfill {\em #2} % Italic job title and date on the right
 		}\unskip
-	}\unskip
+	}
+	\unskip
+	\normalfont
 }{}
+
 
 \newenvironment{rSubsection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
 	\rSubsectionHeading{#1}{#2}{#3}{#4}
@@ -272,6 +273,25 @@
 		\itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
 	}{
 	\end{list}
+	\vspace{0.5em} % Some space after the list of bullet points
+}
+
+\newenvironment{rProjectSection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
+	\rSubsectionHeading{#1}{#2}{#3}{#4}
+	\medskip
+	\begin{list}{$\hspace{-5pt}$}{\leftmargin=0pt\normalfont \rightmargin=20pt} % \cdot used for bullets, no indentation
+		\itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
+	}{
+	\end{list}
+	\vspace{0.5em} % Some space after the list of bullet points
+}
+
+
+\newenvironment{rWorkSection}[2]{ % 4 input arguments - company name, year(s) employed, job title and location
+	\rSubsectionHeading{#1}{#2}{}{}
+	\medskip
+	\normalfont
+	}{
 	\vspace{0.5em} % Some space after the list of bullet points
 }
 
@@ -305,5 +325,5 @@
 % The below commands define the whitespace after certain things in the document - they can be \smallskip, \medskip or \bigskip
 \def\namesize{\huge} % Size of the name at the top of the document
 \def\sectionlineskip{\medskip} % The space above the horizontal line for each section 
-\def\nameskip{\bigskip} % The space after your name at the top
+\def\nameskip{\medskip} % The space after your name at the top
 \def\sectionskip{\medskip} % The space after the heading section
