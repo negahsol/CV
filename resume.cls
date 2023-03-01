@@ -31,7 +31,7 @@
 
 \ProvidesClass{resume}[2020/05/03 v1.0.0 Resume Class]
 
-\LoadClass[12pt,A4]{article} % Font size and paper type
+\LoadClass[11pt,A4]{article} % Font size and paper type
 
 \usepackage[parfill]{parskip} % Remove paragraph indentation
 \usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
@@ -44,7 +44,7 @@
 \usepackage{trimspaces} % Required for triming variable values (https://tex.stackexchange.com/a/484290)
 \usepackage{fontawesome} % Required for icons. List of available icons at http://ctan.imsc.res.in/fonts/fontawesome/doc/fontawesome.pdf
 \usepackage{datetime} % Required for custom date formatting
-\usepackage[left=0.2in,top=0.2in,right=0.2in,bottom=0.2in]{geometry} % Required for setting Document margins
+\usepackage[left=0.8in,top=0.8in,right=0.8in,bottom=0.8in]{geometry} % Required for setting Document margins
 \usepackage{scrextend}
 \pagestyle{empty} % Suppress page numbers
 
@@ -306,4 +306,4 @@
 \def\namesize{\huge} % Size of the name at the top of the document
 \def\sectionlineskip{\medskip} % The space above the horizontal line for each section 
 \def\nameskip{\bigskip} % The space after your name at the top
-\def\sectionskip{\smallskip} % The space after the heading section
+\def\sectionskip{\medskip} % The space after the heading section
