@@ -31,7 +31,7 @@
 
 \ProvidesClass{resume}[2020/05/03 v1.0.0 Resume Class]
 
-\LoadClass[9pt,A4]{article} % Font size and paper type
+\LoadClass[11pt,A4]{article} % Font size and paper type
 
 \usepackage[parfill]{parskip} % Remove paragraph indentation
 \usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
@@ -44,7 +44,7 @@
 \usepackage{trimspaces} % Required for triming variable values (https://tex.stackexchange.com/a/484290)
 \usepackage{fontawesome} % Required for icons. List of available icons at http://ctan.imsc.res.in/fonts/fontawesome/doc/fontawesome.pdf
 \usepackage{datetime} % Required for custom date formatting
-\usepackage[left=0.5in,top=0.5in,right=0.5in,bottom=0.5in]{geometry} % Required for setting Document margins
+\usepackage[left=0.5in,top=0.25in,right=0.5in,bottom=0.25in]{geometry} % Required for setting Document margins
 \usepackage{scrextend}
 \pagestyle{empty} % Suppress page numbers
 
@@ -172,9 +172,6 @@
 	\begingroup
 	\def \\ {\linkSeparator\ }
 	\centerline{%
-		\ifthenelse{\equal{@getCity}{}}{}{%
-			\faMapMarker \hspace{0.2mm} \@getCity}
-		\\
 		\ifthenelse{\equal{@getEmail}{}}{}{%
 			\href {mailto:\@getEmail}
 			{\faEnvelope \hspace{0.2mm} \@getEmail}}
@@ -187,6 +184,7 @@
 		\ifthenelse{\equal{@getLinkedIn}{}}{}{%
 			\href {\@getLinkedInLink}
 			{\faLinkedin \hspace{0.2mm} \@getLinkedIn}}
+		\\
 		\ifthenelse{\equal{@getGithub}{}}{}{%
 			\href {\@getGithubLink}
 			{\faGithub \hspace{0.2mm} \@getGithub}}
@@ -289,7 +287,7 @@
 
 \newenvironment{rWorkSection}[2]{ % 4 input arguments - company name, year(s) employed, job title and location
 	\rSubsectionHeading{#1}{#2}{}{}
-	\medskip
+	\smallskip
 	\normalfont
 	}{
 	\vspace{0.5em} % Some space after the list of bullet points
