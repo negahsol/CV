@@ -31,7 +31,7 @@
 
 \ProvidesClass{resume}[2020/05/03 v1.0.0 Resume Class]
 
-\LoadClass[11pt,A4]{article} % Font size and paper type
+\LoadClass[12pt,A4]{article} % Font size and paper type
 
 \usepackage[parfill]{parskip} % Remove paragraph indentation
 \usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
