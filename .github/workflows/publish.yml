@@ -26,7 +26,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: ${{ env.PDF_FILE }}
-          path: ${{ env.ARTIFACTS_DIR }}
+          path: ${{ env.ARTIFACTS_DIR }}/${{ env.PDF_FILE }}
 
   deploy:
     runs-on: ubuntu-latest
@@ -39,7 +39,8 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v3
         with:
-          path: ${{ env.ARTIFACTS_DIR }}
+          name: ${{ env.PDF_FILE }}
+          path: ${{ env.ARTIFACTS_DIR }}/${{ env.PDF_FILE }}
       - name: Move to pages directory
         run: mv ${{ env.ARTIFACTS_DIR }} ${{ env.GITHUB_PAGES_DIR }}
       - name: deploy on orphan branch
